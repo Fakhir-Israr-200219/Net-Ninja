@@ -2,12 +2,38 @@ GET http://localhost:3000/product
 
 ###create Product
 POST http://localhost:3000/product
+Content-Type: application/json
+
+{
+    "kok":"qwe",
+    "Name":"new p123123roduct789",
+    "Price":400900,
+    "lol":900
+}
 
 ###get by id
-GET http://localhost:3000/product/9090
+GET http://localhost:3000/product/6636e18a7378df4a389a3aa2
 
 ###get by id
-PATCH http://localhost:3000/product/9090
+PATCH http://localhost:3000/product/6636e18a7378df4a389a3aa2
+Content-Type : application/json
+
+{
+    "Name":"pop 123",
+    "Price":9
+}
 
 ###get by id
-DELETE http://localhost:3000/product
+DELETE http://localhost:3000/product/6636e18a7378df4a389a3aa2
+###for query testing
+DELETE http://localhost:3000/oop?id=908324&pop=lop
+
+
+###for test
+POST  http://localhost:3000/oop
+Content-Type : application/json
+
+{
+    "name":"pop",
+    "price":90
+}

@@ -1,26 +1,19 @@
 const express = require('express')
 const router = express.Router();
+const Product = require('../Model/Product.model');
+const { ObjectId } = require('mongodb');
 
+const ProductController = require('../Controller/Product.Controller')
 
-router.get('/',(req,res,next)=>{
-    res.send("getting a list of all product");
-})
+router.get('/', ProductController.getAllProduct)
 
-router.post('/',(req,res,next)=>{
-    res.send('product set successfully');
-})
+router.post('/', ProductController.addProduct)
 
-router.get('/:id',(req,res,next)=>{
-    res.send('get by id '+req.params.id)
-})
+router.get('/:id', ProductController.getProductById)
 
-router.delete('/:id',(req,res,next)=>{
-    res.send('dta delete');
-})
+router.delete('/:id', ProductController.deleteProduct)
 
-router.patch('/:id',(req,res,next)=>{
-    res.send('product update')
-})
+router.patch('/:id', ProductController.updateProduct)
 
 
 module.exports = router;
